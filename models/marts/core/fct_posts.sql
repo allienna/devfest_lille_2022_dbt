@@ -1,3 +1,11 @@
+{{ config(
+    partition_by={
+      "field": "created_at",
+      "data_type": "timestamp",
+      "granularity": "day"
+    }
+)}}
+
 with posts_answers as (
     select * from {{ ref('stg_posts_answers')}}
 ),
