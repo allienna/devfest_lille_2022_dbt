@@ -7,7 +7,7 @@ SELECT
     owner_user_id,
     parent_id
 FROM
-    `bigquery-public-data.stackoverflow.posts_questions`
+    {{ source('stackoverflow', 'posts_questions') }}
 WHERE
     -- limit to recent data for the purposes of this demo project
     creation_date >= TIMESTAMP("2023-07-01")
