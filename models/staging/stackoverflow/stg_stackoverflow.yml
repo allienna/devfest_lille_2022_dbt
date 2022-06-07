@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+  - name: stg_badges
+    columns:
+      - name: badge_id
+        tests:
+          - unique
+          - not_null
+      - name: badge_name
+        tests:
+          - accepted_values:
+              values:
+                - Teacher
+                - Student
+                - Editor
+                - Organizer
+      - name: user_id
+        tests:
+          - relationships:
+              to: ref('stg_users')
+              field: id
