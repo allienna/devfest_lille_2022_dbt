@@ -4,4 +4,4 @@ SELECT
     date AS award_timestamp,
     user_id
 FROM
-    `bigquery-public-data.stackoverflow.badges`
+    {{ source('stackoverflow', 'badges') }}
