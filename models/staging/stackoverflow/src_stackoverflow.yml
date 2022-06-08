@@ -6,6 +6,13 @@ sources:
     schema: stackoverflow
     tables:
       - name: badges
+        description: raw badges table
+
       - name: posts_answers
+        description: raw posts_answers table
+
       - name: posts_questions
+        description: raw posts_questions table
+
       - name: users
+        description: raw users table
