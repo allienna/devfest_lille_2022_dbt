@@ -1,7 +1,11 @@
 version: 2
 
 models:
+  - name: fct_posts
+    description: Brings stackoverflow posts and answers into a single table, with a “type” field for differentiating between the two
+
   - name: dim_users_stats
+    description: Provides an overview of each users engagement. When they signed up, how many badges they have, and how many posts and answers they’ve made
     columns:
       - name: user_id
         tests:
