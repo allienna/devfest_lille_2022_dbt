@@ -2,12 +2,22 @@ version: 2
 
 models:
   - name: stg_users
+    description: Cleaned version of stackoverflow.users table
     columns:
       - name: user_id
+        description: Primary key for stg_users
         tests:
           - unique
           - not_null
+
+  - name: stg_posts_answers
+    description: Cleaned version of stackoverflow.posts_answers
+
+  - name: stg_posts_questions
+    description: Cleaned version of stackoverflow.posts_questions
+
   - name: stg_badges
+    description: Cleaned version of stackoverflow.badges
     columns:
       - name: badge_id
         tests:
@@ -21,7 +31,10 @@ models:
                 - Student
                 - Editor
                 - Organizer
+      - name: class
+        description: '{{ doc("badge_class") }}'
       - name: user_id
+        description: Foreign key to stg_users.id.
         tests:
           - relationships:
               to: ref('stg_users')
