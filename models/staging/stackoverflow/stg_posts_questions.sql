@@ -10,4 +10,4 @@ FROM
     `bigquery-public-data.stackoverflow.posts_questions`
 WHERE
     -- limit to recent data for the purposes of this demo project
-    creation_date >= TIMESTAMP("2022-01-01")
+    creation_date >= TIMESTAMP("2023-07-01")
